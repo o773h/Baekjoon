@@ -18,5 +18,6 @@ for start in range(n):
     
     if n_list[start] + n_list[end] == x:
         count+=1
+        end-=1
 
 print(count)
