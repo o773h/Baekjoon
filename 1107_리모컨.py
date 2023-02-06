@@ -1,6 +1,8 @@
 import sys
 from itertools import product
+
 buttons = ['0','1','2','3','4','5','6','7','8','9']
+
 n = sys.stdin.readline().strip()
 l = len(n)
 n = int(n)
