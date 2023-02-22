@@ -14,7 +14,7 @@ def union_parent(parent,a,b):
     else:
         parent[a] = b
 
-def union_enemy(parent,enemy,node):
+def union_enemy_of_enmey(parent,enemy,node):
     queue = collections.deque()
     queue.extend(enemy[node])
     l = len(queue)
@@ -43,7 +43,7 @@ for _ in range(m):
     
 for i in range(1,n+1):
     if len(enemy[i])!=0:
-        union_enemy(parent,enemy,i)
+        union_enemy_of_enmey(parent,enemy,i)
     
 result = collections.defaultdict(int)
 
