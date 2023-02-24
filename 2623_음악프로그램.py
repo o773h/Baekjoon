@@ -17,10 +17,8 @@ def topological_sort(graph,indegree):
             indegree[next]-=1
             if indegree[next]==0:
                 queue.append(next)
-                
-    for i in indegree:
-        if i>0:
-            return [0]
+    if len(result)!=n:
+        return [0]
         
     return result
 
