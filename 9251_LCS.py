@@ -1,13 +1,18 @@
-word1 = input()
-word2 = input()
-lcs=[0 for _ in range(len(word2))]
+import sys
 
-for i in range(len(word1)):
-    for j in range(len(word2)):
-        if word2[j]==word1[i]:
-            if j!=0:
-                lcs[j]=max(lcs[:j]) +1
-            else:
-                lcs[j]=lcs[0]+1
+s_a = sys.stdin.readline().rstrip()
+s_b = sys.stdin.readline().rstrip()
 
-print(max(lcs))
+l_a = len(s_a)
+l_b = len(s_b)
+
+lcs = [[0 for _ in range(l_b+1)] for _ in range(l_a+1)]
+
+for i in range(1,l_a+1):
+    for j in range(1,l_b+1):
+        if s_a[i-1] == s_b[j-1]:
+            lcs[i][j] = lcs[i-1][j-1]+1
+        else:
+            lcs[i][j] = max(lcs[i-1][j], lcs[i][j-1])
+
+print(lcs[-1][-1])
