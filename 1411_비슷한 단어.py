@@ -9,6 +9,7 @@ s_dict = {}
 for _ in range(n):
     count = 0
     s = sys.stdin.readline().rstrip()
+    
     for i in range(len(s)):
         if s[i].isupper():
             continue
